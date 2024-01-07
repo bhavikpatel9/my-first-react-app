@@ -43,20 +43,34 @@ export default function Form(props) {
         setText(newValue);
     }
 
+    function checkSpace(word){
+        if(word!==" "){
+            return word;
+        }
+    }
+
   return (
-    <div className='container my-2'>
-      
-            <h1>{props.heading}</h1>
-            <div class="mb-3">
-              <textarea class="form-control" value={text} id="textAreaId" onChange={handleOnChange} rows="8"></textarea>
-            </div>
-            <div>
-                <button className='mx-2 btn btn-primary'  type="button" onClick={handleUpClick}>Convert to Uppercase</button>
-                <button className='mx-2 btn btn-primary'  type="button" onClick={handleLowClick} >Convert to Lowercase</button>
-                <button className='mx-2 btn btn-primary'  type="button" onClick={handleCapClick} >Capitalize text</button>
-                <button className='mx-2 btn btn-primary'  type="button" onClick={handleCopy} >Copy text</button>
-                <button className='mx-2 btn btn-primary'  type="button" onClick={handleClear} >Clear text</button>
-            </div>
-    </div>
+    <>
+        <div className='container my-2 border border-black'>
+        
+                <h1>{props.heading}</h1>
+                <div class="mb-3">
+                <textarea class="form-control" value={text} id="textAreaId" onChange={handleOnChange} rows="8" placeholder='Enter your text here'></textarea>
+                </div>
+                <div>
+                    <button className='mx-2 my-2 btn btn-primary'  type="button" onClick={handleUpClick}>Convert to Uppercase</button>
+                    <button className='mx-2 my-2 btn btn-primary'  type="button" onClick={handleLowClick} >Convert to Lowercase</button>
+                    <button className='mx-2 my-2 btn btn-primary'  type="button" onClick={handleCapClick} >Capitalize text</button>
+                    <button className='mx-2 my-2 btn btn-primary'  type="button" onClick={handleCopy} >Copy text</button>
+                    <button className='mx-2 my-2 btn btn-primary'  type="button" onClick={handleClear} >Clear text</button>
+                </div>
+        </div>
+        <div className="container border border-black">
+                <h2>Your text summary</h2>
+                <p>{text.split(" ").filter(checkSpace).length} word and {text.length} characters</p>
+                <h3>Preview</h3>
+                <p>{text.length===0?'Enter something in above textbox to preview':text}</p>
+        </div>
+    </>
   )
 }
