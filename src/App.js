@@ -29,7 +29,7 @@ function App() {
         <Route path='/' element={<Navbar title="Textutils" about="About textutils" mode={mode}  toggleMode={toggleMode}/>} >
 
             <Route index element={<div className="container">
-              <Form heading="Enter text below to analyze" mode={mode} />
+              <Form heading="Try Textutils - Word counter, Character counter" mode={mode} />
               </div>}/>
             <Route path='/about' element={<About mode={mode} />}/>
         </Route>

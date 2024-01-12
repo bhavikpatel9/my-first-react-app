@@ -54,7 +54,7 @@ export default function Form(props) {
         <div className={`container my-2 border border-${props.mode==='light'?'dark':'light'} bg-${props.mode==='light'?'light':'dark'} text-${props.mode==='light'?'dark':'light'}`}>
         
                 <h1>{props.heading}</h1>
-                <div class="mb-3">
+                <div className="mb-3">
                 <textarea className={`form-control bg-${props.mode==='light'?'light':'secondary'} text-${props.mode==='light'?'dark':'light'}`}  value={text} id="textAreaId" onChange={handleOnChange} rows="8" placeholder='Enter your text here'></textarea>
                 </div>
                 <div>
@@ -67,7 +67,7 @@ export default function Form(props) {
         </div>
         <div className={`container border border-${props.mode==='light'?'dark':'light'} bg-${props.mode==='light'?'light':'dark'} text-${props.mode==='light'?'dark':'light'}`}>
                 <h2>Your text summary</h2>
-                <p>{text.split(" ").filter(checkSpace).length} word and {text.length} characters</p>
+                <p>{text.split(/\s+/).filter(checkSpace).length} word and {text.length} characters</p>
                 <h3>Preview</h3>
                 <p>{text.length===0?'Enter something in above textbox to preview':text}</p>
         </div>
