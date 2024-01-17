@@ -9,14 +9,32 @@ export default function Form(props) {
     const handleUpClick = ()=>{
         const newValue = text.toUpperCase();
         setText(newValue);
+        if(text.length > 0){
+        props.showAlert('success','text is converted to uppercase');
+        }
+        else{
+            props.showAlert('danger','please first enter some text')
+        }
     }
     const handleLowClick = ()=>{
         const newValue = text.toLowerCase();
         setText(newValue);
+        if(text.length > 0){
+            props.showAlert('success','text is converted to lowercase');
+            }
+        else{
+                props.showAlert('danger','please first enter some text')
+        }
     }
     const handleClear = ()=>{
        
         setText("");
+        if(text.length > 0){
+            props.showAlert('success','text is cleared');
+            }
+        else{
+                props.showAlert('danger','please first enter some text')
+        }
     }
 
 
@@ -26,6 +44,12 @@ export default function Form(props) {
         const copyText = document.getElementById("textAreaId");
         copyText.select();
         navigator.clipboard.writeText(copyText.value);
+        if(text.length > 0){
+            props.showAlert('success','text is copied');
+            }
+        else{
+                props.showAlert('danger','please first enter some text')
+        }
     }
 
 
@@ -41,6 +65,12 @@ export default function Form(props) {
         }
         const newValue = capitalWords.join(" ");
         setText(newValue);
+        if(text.length > 0){
+            props.showAlert('success','text is capitalized');
+            }
+        else{
+                props.showAlert('danger','please first enter some text')
+        }
     }
 
     function checkSpace(word){
