@@ -13,7 +13,7 @@ export default function Form(props) {
         props.showAlert('success','text is converted to uppercase');
         }
         else{
-            props.showAlert('danger','please first enter some text')
+            props.showAlert('danger','Please first enter some text')
         }
     }
     const handleLowClick = ()=>{
@@ -23,7 +23,7 @@ export default function Form(props) {
             props.showAlert('success','text is converted to lowercase');
             }
         else{
-                props.showAlert('danger','please first enter some text')
+                props.showAlert('danger','Please first enter some text')
         }
     }
     const handleClear = ()=>{
@@ -33,7 +33,7 @@ export default function Form(props) {
             props.showAlert('success','text is cleared');
             }
         else{
-                props.showAlert('danger','please first enter some text')
+                props.showAlert('danger','Please first enter some text')
         }
     }
 
@@ -48,7 +48,7 @@ export default function Form(props) {
             props.showAlert('success','text is copied');
             }
         else{
-                props.showAlert('danger','please first enter some text')
+                props.showAlert('danger','Please first enter some text')
         }
     }
 
@@ -69,7 +69,7 @@ export default function Form(props) {
             props.showAlert('success','text is capitalized');
             }
         else{
-                props.showAlert('danger','please first enter some text')
+                props.showAlert('danger','Please first enter some text')
         }
     }
 

@@ -49,7 +49,7 @@ function App() {
             <Route index element={<div> <Alert alert={alert}/>
                                      <div className='container'><Form heading="Try Textutils - Word counter, Character counter" mode={mode} showAlert={showAlert} /></div>
                                   </div>}/>
-            <Route path='/about' element={<div className='container'><Alert alert={alert}/>  <About mode={mode} /></div>}/>
+            <Route path='/about' element={<div><Alert alert={alert}/>  <About mode={mode} /></div>}/>
         </Route>
         
         
